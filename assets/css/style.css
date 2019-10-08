@@ -1,0 +1,107 @@
+body{
+margin:0;
+background: #000;
+}
+#nojs-info{
+	color: #ff0000;
+    margin: 0;
+    text-align: center;
+}
+.main-img{
+width:80%;
+margin:10% 10% 0 10%;
+z-index:500;
+}
+.close{
+position:absolute;
+top:0;
+right:0;
+z-index:1000;
+width:10%;
+cursor: grab;
+}
+.x-img{
+    float: right;
+    max-width: 100%;
+}
+.x-img:hover{opacity:0.7}
+.banner{
+width:100%;
+background-color:#c7bfe6;
+margin:0;
+    height: 100%;
+	z-index:100;
+}
+.under{
+background:#000;
+position:absolute;
+top:0;
+left:0;
+    width: 100%;
+font-family:serif;
+text-align:center;
+z-index:-1;
+}
+.my-row{
+height:18px;
+width:100%;
+font-family:'Roboto Mono', monospace;
+font-size:15px;
+line-height:15px;
+}
+.letter{
+z-index:10;
+display:inline-block;
+width:9px;
+background:#000;
+color:#000;
+-webkit-transition: color 0.4s;
+    transition:  color 0.4s;
+}
+.portfolio-letter{
+z-index:10;
+display:inline-block;
+width:9px;
+background:#000;
+color:#ff0000;
+}
+@media only screen and (max-width: 991px) {
+.my-row{
+height:30px;
+font-size:22px;
+line-height:22px;
+}
+.letter,.portfolio-letter{
+width:15px;
+}
+}
+@media only screen and (max-width: 767px) {
+.my-row{
+height:40px;
+font-size:32px;
+line-height:32px;
+}
+.letter,.portfolio-letter{
+width:20px;
+}
+}
+@media only screen and (max-width: 575px) {
+.my-row{
+height:50px;
+font-size:45px;
+line-height:45px;
+}
+.letter,.portfolio-letter{
+width:30px;
+}
+}
+
+
+.letter.green{
+color:green;
+}
+#portfolio-link{
+cursor: alias;
+}
+::-moz-selection {background-color:rgba(255, 0, 0, 0.99); color: #000}
+::selection {background-color:rgba(255, 0, 0, 0.99); color: #000; }
