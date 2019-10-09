@@ -13,8 +13,9 @@ Simple HTML document with useless JavaScript which is used on my homepage: [kjur
 
 ## What does the script do ?
 1. generates rows filled with letters underneath the banner when document is ready
-2. adds functions to events:
+2. adds event handlers:
+    * right mouse button
     * banner click
-    * windows resize
-    * .letter mouseover and out
-3. changes randomly color of letters and background of rows
+    * window resize
+    * .letter mouseover and mouseout
+3. changes randomly color of letters and background color of rows
