@@ -85,23 +85,27 @@ function refreshMouseEvents(){
 	// attaches mousewheel event handler
 	jQuery('body').bind('mousewheel DOMMouseScroll', function(e){
 		// changes span.letter color depending on mousewheel
-		var currentColor, newColor, step;
-		currentColor = parseInt(jQuery('.green').css('color').replace(/\s|rgb|\(|\)/g,'').split(',')[1]);
-		step = 20;
-		if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0 ){
-			if(currentColor > step){
-				newColor = currentColor - step;
+		if(jQuery('.green').length && !e.ctrlKey){
+			var currentColor, newColor, step;
+			currentColor = parseInt(jQuery('.green').css('color').replace(/\s|rgb|\(|\)/g,'').split(',')[1]);
+			step = 20;
+			if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0 ){
+				if(currentColor > step){
+					newColor = currentColor - step;
+				} else {
+					newColor = 0;
+				}
 			} else {
-				newColor = 0;
+				if(currentColor < 255 - step){
+					newColor = currentColor + step;
+				} else {
+					newColor = 255;
+				}
 			}
-		} else {
-			if(currentColor < 255 - step){
-				newColor = currentColor + step;
-			} else {
-				newColor = 255;
-			}
+			window.setTimeout(function(){
+				jQuery('head style').html('.letter.green{color:rgb(0,' + newColor + ',0);}');
+			}, 1);
 		}
-		jQuery('head style').html('.letter.green{color:rgb(0,' + newColor + ',0);}');
 	});
 }
 
