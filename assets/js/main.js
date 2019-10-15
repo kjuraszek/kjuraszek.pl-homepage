@@ -1,7 +1,8 @@
 jQuery( document ).ready(function() {
+	var toggleLettersInterval, toggleRowsInterval;
 	document.oncontextmenu = function() {return false;};
 	document.title = setTitle()+' ?';
-
+	
 	jQuery(document).mousedown(function(e){ 
 		if( e.button == 2 ) { 
 			alert("Please, don't use right mouse button!"); 
@@ -18,8 +19,19 @@ jQuery( document ).ready(function() {
 		jQuery(".banner").delay(1200).queue(function(){jQuery(this).detach()});
 		jQuery(window).resize(printLetters);
 		
-		window.setInterval(toggleLetters,1);
-		window.setInterval(toggleRows,1000);
+		toggleLettersInterval = window.setInterval(toggleLetters,1);
+		toggleRowsInterval = window.setInterval(toggleRows,1000);
+		jQuery('#portfolio-link').click(function(e){
+			e.preventDefault();
+			clearInterval(toggleLettersInterval);
+			clearInterval(toggleRowsInterval);
+			jQuery('.letter').removeClass('green');
+			jQuery('.my-row .letter').css({'background': 'red','color' : 'black'});
+			var href = jQuery(this).attr('href');
+			jQuery('.under').fadeOut(500, function(){
+				window.location = href;
+			});
+		});
 		jQuery('body').css('cursor', 'none');
 		document.title = setTitle()+' !';
 	});

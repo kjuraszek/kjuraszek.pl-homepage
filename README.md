@@ -19,4 +19,5 @@ Simple HTML document with useless JavaScript which is used on my homepage: [kjur
     * window resize
     * .letter mouseover and mouseout
     * mousewheel spin
+    * portfolio-link click
 3. changes randomly color of letters and background color of rows
